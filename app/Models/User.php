@@ -39,5 +39,20 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
+
+    public function auditLogs()
+    {
+        return $this->hasMany(AuditLog::class);
+    }
+
+    public function syncConflicts()
+    {
+        return $this->hasMany(SyncConflict::class, 'resolved_by');
+    }    
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
     
 }

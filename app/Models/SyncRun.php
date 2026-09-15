@@ -24,7 +24,7 @@ class SyncRun extends Model
         'items_updated',
         'items_deleted',
         'items_failed',
-        'error_message',
+        'error',
     ];
 
     protected function casts(): array

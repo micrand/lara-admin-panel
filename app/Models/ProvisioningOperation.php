@@ -21,9 +21,9 @@ class ProvisioningOperation extends Model
         'status',
         'attempts',
         'idempotency_key',
-        'request_payload',
-        'response_payload',
-        'error_message',
+        'request',
+        'response',
+        'errors',
         'started_at',
         'completed_at',
     ];
@@ -33,8 +33,9 @@ class ProvisioningOperation extends Model
         return [
             'resource_id' => 'string',
             'attempts' => 'integer',
-            'request_payload' => 'array',
-            'response_payload' => 'array',
+            'request' => 'array',
+            'response' => 'array',
+            'error' => 'array',
             'started_at' => 'datetime',
             'completed_at' => 'datetime',
         ];

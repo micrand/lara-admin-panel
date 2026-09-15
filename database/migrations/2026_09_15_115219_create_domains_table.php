@@ -52,11 +52,6 @@ return new class extends Migration
                 ->on('hosting_accounts')
                 ->nullOnDelete();
 
-            $table->foreign('parent_domain_id')
-                ->references('id')
-                ->on('domains')
-                ->nullOnDelete();
-
             $table->index('client_id');
             $table->index('service_id');
             $table->index('hosting_account_id');
@@ -65,6 +60,13 @@ return new class extends Migration
             $table->index('external_id');
 
             $table->unique(['name', 'type']);
+        });
+
+        Schema::table('domains', function (Blueprint $table) {
+            $table->foreign('parent_domain_id')
+                ->references('id')
+                ->on('domains')
+                ->nullOnDelete();
         });
 
         DB::statement("

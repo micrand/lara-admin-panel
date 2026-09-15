@@ -35,7 +35,7 @@ class ProvisioningOperation extends Model
             'attempts' => 'integer',
             'request' => 'array',
             'response' => 'array',
-            'error' => 'array',
+            'errors' => 'array',
             'started_at' => 'datetime',
             'completed_at' => 'datetime',
         ];

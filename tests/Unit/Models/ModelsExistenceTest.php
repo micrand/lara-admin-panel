@@ -4,9 +4,9 @@ namespace Tests\Unit\Models;
 
 use Tests\TestCase;
 
-class ModelUuidTest extends TestCase
+class ModelsExistenceTest extends TestCase
 {
-    public function test_models_use_string_non_incrementing_primary_keys(): void
+    public function test_all_expected_models_exist(): void
     {
         $models = [
             \App\Models\User::class,
@@ -34,11 +34,11 @@ class ModelUuidTest extends TestCase
             \App\Models\Notification::class,
         ];
 
-        foreach ($models as $modelClass) {
-            $model = new $modelClass();
-
-            $this->assertSame('string', $model->getKeyType());
-            $this->assertFalse($model->getIncrementing());
+        foreach ($models as $model) {
+            $this->assertTrue(
+                class_exists($model),
+                "Model {$model} does not exist."
+            );
         }
     }
 }

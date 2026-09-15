@@ -23,9 +23,11 @@ class ModelSoftDeletesTest extends TestCase
         ];
 
         foreach ($models as $modelClass) {
+            $model = new $modelClass();
+
             $this->assertContains(
                 SoftDeletes::class,
-                class_uses_recursive($modelClass),
+                class_uses_recursive($model),
                 "{$modelClass} must use SoftDeletes."
             );
         }

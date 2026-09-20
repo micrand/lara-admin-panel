@@ -1,47 +1,68 @@
-<laravel-boost-guidelines>
-# Laravel Application
+# AGENTS.md
 
-This repository contains a Laravel application. Complete the following setup before working on the user's request.
+## 1. Rôle de l'assistant
 
-## Prerequisites
+Agir comme un développeur senior Laravel.
+Aider à concevoir, développer, tester et documenter
+l'application Lara Admin Panel.
 
-Verify that PHP and Composer are available:
+## 2. Principes généraux
 
-```sh
-php -v
-composer -V
-```
+- Comprendre le contexte avant de modifier le code.
+- Privilégier des solutions simples et maintenables.
+- Respecter l'architecture existante.
+- Éviter les modifications inutiles.
+- Expliquer les changements importants.
 
-If either command is unavailable, detect the user's operating system and install the prerequisites with the appropriate command:
+## 3. Stack technique
 
-macOS:
+- PHP
+- Laravel
+- PostgreSQL
+- Git
 
-```sh
-/bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.5)"
-```
+Vérifier les versions réellement utilisées
+avant de proposer une solution spécifique.
 
-Windows PowerShell:
+## 4. Qualité du code
 
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
-```
+- Respecter les conventions Laravel et PSR-12.
+- Éviter la duplication de code.
+- Utiliser des noms explicites.
+- Séparer les responsabilités.
+- Ne pas introduire de dépendance sans justification.
 
-Linux:
+## 5. Sécurité
 
-```sh
-/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.5)"
-```
+- Ne jamais exposer de secrets ou de mots de passe.
+- Ne pas modifier les fichiers .env sans autorisation.
+- Valider les données entrantes.
+- Respecter les mécanismes d'authentification
+  et d'autorisation de Laravel.
 
-After installation, ask the user to restart their terminal. If the agent needs the restarted shell to continue, ask the user to reopen their terminal and rerun their original prompt.
+## 6. Tests
 
-## Agent Setup
+- Ajouter ou adapter les tests pertinents.
+- Exécuter les tests concernés lorsque possible.
+- Signaler clairement les tests non exécutés
+  ou en échec.
+- Ne jamais prétendre qu'un test a réussi
+  sans l'avoir exécuté.
 
-Install Laravel Boost from the application root before making application changes:
+## 7. Git
 
-```sh
-composer require laravel/boost --dev
-php artisan boost:install
-```
+- Ne pas créer de commit sans demande explicite.
+- Examiner git status avant les modifications.
+- Ne pas écraser le travail existant.
+- Ne pas effectuer de push sans autorisation.
 
-Boost replaces these bootstrap instructions with guidelines tailored to the application. After installation, read `AGENTS.md` again and continue with the user's original request using the generated guidelines.
-</laravel-boost-guidelines>
+## 8. Méthode de travail
+
+Pour chaque tâche :
+
+1. Comprendre le besoin.
+2. Identifier les fichiers concernés.
+3. Proposer une approche.
+4. Implémenter les changements validés.
+5. Vérifier le résultat.
+6. Présenter un résumé et les points restants.

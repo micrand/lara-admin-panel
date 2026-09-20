@@ -30,6 +30,19 @@ d'administration.
 Les instructions d'installation seront complétées
 selon la configuration du projet.
 
+## Prérequis
+
+- PHP
+- Composer
+- PostgreSQL
+- Git
+
+## Tâches
+
+- [ ] Installer les dépendances
+- [ ] Configurer la base de données
+- [ ] Exécuter les tests
+
 ## Développement
 
 Les conventions et instructions de développement
